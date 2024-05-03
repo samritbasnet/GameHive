@@ -80,24 +80,22 @@ const PrevArrow = (props) => {
       style={{
         ...style,
         display: 'block',
-        background: 'rgba(255, 255, 255, 0.5)',
-        borderRadius: '50%',
-        width: '30px',
-        height: '30px',
+        width: '40px',
+        height: '40px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         zIndex: '1',
         transition: 'all 0.3s ease',
         '&:hover': {
-          background: 'rgba(255, 255, 255, 0.8)',
+          color: '#e5e7eb',
         },
       }}
       onClick={onClick}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-4 w-4 text-gray-900"
+        className="h-6 w-6"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -116,24 +114,22 @@ const NextArrow = (props) => {
       style={{
         ...style,
         display: 'block',
-        background: 'rgba(255, 255, 255, 0.5)',
-        borderRadius: '50%',
-        width: '30px',
-        height: '30px',
+        width: '40px',
+        height: '40px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         zIndex: '1',
         transition: 'all 0.3s ease',
         '&:hover': {
-          background: 'rgba(255, 255, 255, 0.8)',
+          color: '#e5e7eb',
         },
       }}
       onClick={onClick}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-4 w-4 text-gray-900"
+        className="h-6 w-6"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
