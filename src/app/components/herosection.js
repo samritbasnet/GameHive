@@ -15,6 +15,8 @@ const HeroSection = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
   };
 
   const featuredProducts = [
@@ -46,10 +48,10 @@ const HeroSection = () => {
             <div key={product.id}>
               <div className="flex justify-between items-center">
                 <div className="max-w-md">
-                  <h1 className="text-4xl font-bold mb-4">{product.title}</h1>
-                  <p className="mb-8">{product.description}</p>
+                  <h1 className="text-4xl font-bold mb-4 animate-fadeIn">{product.title}</h1>
+                  <p className="mb-8 animate-fadeIn">{product.description}</p>
                   <Link legacyBehavior href={`/product/${product.id}`}>
-                    <a className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                    <a className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded animate-fadeIn">
                       Show Product
                     </a>
                   </Link>
@@ -57,7 +59,7 @@ const HeroSection = () => {
                 <img
                   src={product.image}
                   alt={product.title}
-                  className="hidden md:block w-1/2 rounded-lg shadow-lg"
+                  className="hidden md:block w-1/2 rounded-lg shadow-lg animate-fadeIn"
                 />
               </div>
             </div>
@@ -69,3 +71,75 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
+const PrevArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: 'block',
+        background: 'rgba(255, 255, 255, 0.5)',
+        borderRadius: '50%',
+        width: '30px',
+        height: '30px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        zIndex: '1',
+        transition: 'all 0.3s ease',
+        '&:hover': {
+          background: 'rgba(255, 255, 255, 0.8)',
+        },
+      }}
+      onClick={onClick}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-4 w-4 text-gray-900"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+      </svg>
+    </div>
+  );
+};
+
+const NextArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: 'block',
+        background: 'rgba(255, 255, 255, 0.5)',
+        borderRadius: '50%',
+        width: '30px',
+        height: '30px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        zIndex: '1',
+        transition: 'all 0.3s ease',
+        '&:hover': {
+          background: 'rgba(255, 255, 255, 0.8)',
+        },
+      }}
+      onClick={onClick}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-4 w-4 text-gray-900"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+      </svg>
+    </div>
+  );
+};

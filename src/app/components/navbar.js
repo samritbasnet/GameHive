@@ -12,7 +12,7 @@ const Navbar = () => {
         <div className="flex items-center">
           <Link legacyBehavior href="/">
             <a className="text-2xl font-bold">
-              <img src="/logo.jpg" alt="GameHive" className="h-8" />
+              <img src="/logo.png" alt="GameHive" className="h-8" />
             </a>
           </Link>
           <ul className="hidden md:flex ml-10 space-x-4">
