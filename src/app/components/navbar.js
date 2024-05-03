@@ -11,7 +11,9 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
           <Link legacyBehavior href="/">
-            <a className="text-2xl font-bold">GameHive</a>
+            <a className="text-2xl font-bold">
+              <img src="/logo.jpg" alt="GameHive" className="h-8" />
+            </a>
           </Link>
           <ul className="hidden md:flex ml-10 space-x-4">
             <li>
@@ -37,6 +39,29 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex items-center space-x-4">
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Search products..."
+              className="bg-gray-800 rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
+            />
+            <button className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white focus:outline-none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </button>
+          </div>
           <Link legacyBehavior href="/cart">
             <a className="relative">
               <svg
