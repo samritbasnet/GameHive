@@ -5,7 +5,6 @@ import Link from 'next/link';
 
 const FeaturedProducts = () => {
   const [likedProducts, setLikedProducts] = useState([]);
-  const [selectedColors, setSelectedColors] = useState({});
   const imageRefs = useRef([]);
 
   const products = [
@@ -14,21 +13,18 @@ const FeaturedProducts = () => {
       title: "Console",
       price: 1200.99,
       image: "/console.jpg",
-      colors: ['#FF0000', '#00FF00', '#0000FF'],
     },
     {
       id: 2,
       title: "Gaming Chair",
       price: 489.99,
-      image: "/gchair.jpg",
-      colors: ['#FFFF00', '#00FFFF', '#FF00FF'],
+      image: "/chair.jpg",
     },
     {
       id: 3,
       title: "LCD Monitor",
       price: 249.99,
       image: "/lcd.jpeg",
-      colors: ['#800080', '#008080', '#808080'],
     },
   ];
 
@@ -40,22 +36,15 @@ const FeaturedProducts = () => {
     }
   };
 
-  const handleColorChange = (productId, color) => {
-    setSelectedColors({
-      ...selectedColors,
-      [productId]: color,
-    });
-  };
-
   return (
-    <section className="bg-white py-20">
+    <section className="bg-gray-900 text-white py-20">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold mb-8">Best Sellers of the Week</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {products.map((product, index) => (
             <div
               key={product.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg"
+              className="bg-gray-800 rounded-lg shadow-md overflow-hidden transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg"
             >
               <div
                 className="w-full h-64 relative"
@@ -74,7 +63,7 @@ const FeaturedProducts = () => {
                     className={`p-2 rounded-full ${
                       likedProducts.includes(product.id)
                         ? 'bg-red-500 hover:bg-red-600'
-                        : 'bg-gray-200 hover:bg-gray-300'
+                        : 'bg-gray-700 hover:bg-gray-600'
                     } transition-colors duration-300`}
                     onClick={() => handleLike(product.id)}
                   >
@@ -94,25 +83,16 @@ const FeaturedProducts = () => {
                     </svg>
                   </button>
                 </div>
-                <p className="text-gray-600 mb-4">${product.price.toFixed(2)}</p>
+                <p className="text-gray-400 mb-4">${product.price.toFixed(2)}</p>
                 <div className="flex items-center mb-4">
-                  <select
-                    className="bg-gray-800 text-white py-2 px-4 rounded-md focus:outline-none mr-4"
-                    value={selectedColors[product.id] || ''}
-                    onChange={(event) => handleColorChange(product.id, event.target.value)}
-                  >
-                    <option value="">Select a color</option>
-                    {product.colors.map((color, index) => (
-                      <option key={index} value={color}>
-                        {color === '#FF0000' ? 'Red' : color === '#00FF00' ? 'Green' : 'Blue'}
-                      </option>
-                    ))}
-                  </select>
                   <Link legacyBehavior href={`/product/${product.id}`}>
-                    <a className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300">
+                    <a className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300 mr-4">
                       Add to Cart
                     </a>
                   </Link>
+                  <button className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300">
+                    Quick View
+                  </button>
                 </div>
               </div>
             </div>
