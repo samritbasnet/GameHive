@@ -5,6 +5,7 @@ import SubscribeNewsletter from "./components/subscribenews";
 import AboutYourShop from "./components/aboutus";
 import LatestProducts from "./components/productblog";
 import ProductRatings from "./components/review";
+import Footer from "./components/footer";
 export default function Page() {
   return (
     <>
@@ -17,6 +18,7 @@ export default function Page() {
 <AboutYourShop/>
 <LatestProducts/>
 <ProductRatings/>
+<Footer/>
 </div>
 
         
